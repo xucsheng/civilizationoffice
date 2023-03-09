@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.activiti.org/processdef" exporter="Camunda Modeler" exporterVersion="3.0.0">
+  <process id="PowerAssessmentForm" name="PowerAssessmentForm" isExecutable="true">
+    <startEvent id="sid-274e800a-dfcf-406b-bf49-3a60c612fb2d" name="start" />
+    <endEvent id="sid-a9bf0ee3-c831-4a8d-8b2d-6acde24630a4" name="end" />
+    <userTask id="sid-b1914f1a-e11d-4a72-8c71-a8e72e1a33b2" name="部门自评" camunda:candidateUsers="#{usernames}" />
+    <userTask id="sid-d716935a-9247-4031-854c-ab835f68dffe" name="复核评估" camunda:candidateUsers="#{usernames}" />
+    <sequenceFlow id="sid-04906c15-1b62-486c-8eb3-a6fb0524dcce" sourceRef="sid-274e800a-dfcf-406b-bf49-3a60c612fb2d" targetRef="sid-b1914f1a-e11d-4a72-8c71-a8e72e1a33b2" />
+    <sequenceFlow id="sid-6d16a4d0-c336-487a-827f-e771eceba9b7" name="提交自评任务" sourceRef="sid-b1914f1a-e11d-4a72-8c71-a8e72e1a33b2" targetRef="sid-d716935a-9247-4031-854c-ab835f68dffe" />
+    <sequenceFlow id="sid-8edbac26-60ef-40d0-b8c9-6684da0324cb" name="提交复核任务" sourceRef="sid-d716935a-9247-4031-854c-ab835f68dffe" targetRef="sid-a9bf0ee3-c831-4a8d-8b2d-6acde24630a4" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_PowerAssessmentForm">
+    <bpmndi:BPMNPlane id="BPMNPlane_PowerAssessmentForm" bpmnElement="PowerAssessmentForm">
+      <bpmndi:BPMNShape id="shape-3084937b-a7bd-4653-8e85-05d5d8295d9f" bpmnElement="sid-274e800a-dfcf-406b-bf49-3a60c612fb2d">
+        <omgdc:Bounds x="179" y="81" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-6f62864d-5866-4a97-a708-a36b8cec41fe" bpmnElement="sid-a9bf0ee3-c831-4a8d-8b2d-6acde24630a4">
+        <omgdc:Bounds x="179" y="381" width="30" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-f1c32785-6731-491d-ac5f-8b55b1924914" bpmnElement="sid-b1914f1a-e11d-4a72-8c71-a8e72e1a33b2">
+        <omgdc:Bounds x="156" y="151" width="75" height="45" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-5b908f11-3f77-444d-a52a-5694aa78a70a" bpmnElement="sid-d716935a-9247-4031-854c-ab835f68dffe">
+        <omgdc:Bounds x="156" y="261" width="75" height="45" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-e4011cd1-db25-4db6-a373-10737ad9bb7f" bpmnElement="sid-04906c15-1b62-486c-8eb3-a6fb0524dcce">
+        <omgdi:waypoint x="193.5" y="110.999985" />
+        <omgdi:waypoint x="193.5" y="151" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-950c142e-6c33-45df-9971-863df719c018" bpmnElement="sid-6d16a4d0-c336-487a-827f-e771eceba9b7">
+        <omgdi:waypoint x="193.5" y="196" />
+        <omgdi:waypoint x="193.50002" y="261" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="161" y="204" width="66" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge-7eb9bcfc-06db-4045-9848-e98717621924" bpmnElement="sid-8edbac26-60ef-40d0-b8c9-6684da0324cb">
+        <omgdi:waypoint x="193.50002" y="306" />
+        <omgdi:waypoint x="193.50002" y="381" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="176" y="334" width="66" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
